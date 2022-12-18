@@ -1,0 +1,35 @@
+﻿@page
+@model QuanLyHangHoa.Pages.MH_SuaHangHoaModel
+
+<form method="POST">
+    <label for="ma_hang">Nhập mã hàng hóa:</label><br>
+    <input type="text" name="MaHang" value="@Model.HangHoa.maHang"><br>
+
+    <label for="ten_hang">Nhập tên hàng hóa:</label><br>
+    <input type="text" name="TenHang" value="@Model.HangHoa.tenHang"><br>
+
+    <label for="loai_hang">Nhập loại hàng hóa:</label><br>
+    <input type="text" name="LoaiHang" value="@Model.HangHoa.loaiHang"><br>
+
+    <label for="cong_ty">Nhập công ty sản xuất:</label><br>
+    <input type="text" name="CongTySX" value="@Model.HangHoa.congTySX"><br>
+
+    <label for="nam_san_xuat">Nhập năm sản xuất:</label><br>
+    <input type="number" name="NamSX" value="@Model.HangHoa.namSX"><br>
+
+    <label for="han_dung">Nhập hạn dùng (tháng):</label><br>
+    <input type="number" name="HanDung" value="@Model.HangHoa.hanDung"><br>
+    
+    <input type="submit" value="Sửa hàng hóa"><br>
+</form>
+
+@section Scripts
+{
+    <div>Nhập thông tin hàng hóa.</div>
+}
+
+<form method="POST">
+    <input type="button" onclick="window.location.href = 'MH_DanhSachHangHoa'" value="Trở về danh sách hàng hóa"/>
+</form>
+
+@Model.Chuoi

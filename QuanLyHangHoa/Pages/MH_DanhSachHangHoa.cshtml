@@ -1,0 +1,36 @@
+﻿@page
+@model QuanLyHangHoa.Pages.MH_DanhSachHangHoaModel
+@using QuanLyHangHoa.Entities
+
+<form method="POST">
+    <label for="fname">Nhap tu khoa:</label><br>
+    <input type="text" name="tuKhoa" value=" "><br>
+    <input type="submit" value="Tìm kiếm">
+    <input type="button" onclick="window.location.href = 'MH_ThemHangHoa'" value="Thêm hàng hóa mới"/>
+</form>
+
+<table>
+    <tr>
+        <th>Mã hàng</th>
+        <th>Tên hàng</th>
+        <th>Loại hàng</th>
+        <th>Công ty sản xuất</th>
+        <th>Năm sản xuất</th>
+        <th>Hạn dùng</th>
+    </tr>    
+    @foreach (HangHoa hh in Model.dsHangHoa)
+    {
+        <tr>
+            <td>@hh.maHang</td>
+            <td>@hh.tenHang</td>
+            <td>@hh.loaiHang</td>
+            <td>@hh.congTySX</td>
+            <td>@hh.namSX</td>
+            <td>@hh.hanDung</td>
+            <td>
+                <a href="MH_XoaHangHoa?ID=@hh.maHang"> Xóa </a>
+                <a href="MH_SuaHangHoa?ID=@hh.maHang"> Sửa </a>
+            </td>
+        </tr>
+    }
+</table>

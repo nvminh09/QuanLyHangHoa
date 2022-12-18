@@ -1,0 +1,101 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    string tenNguoiDung = Context.Session.GetString("ten");    
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - QuanLyHangHoa</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">QuanLyHangHoa</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+                @if (string.IsNullOrWhiteSpace(tenNguoiDung))
+                {
+                    <div>
+                        <a class="nav-link text-dark" href="/MH_DangNhap">Đăng nhập</a>
+                        <a class="nav-link text-dark" href="/MH_DangKy">Đăng ký</a>
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <div> Chào bạn @tenNguoiDung </div>
+                        <a class="nav-link text-dark" href="/MH_DangNhap">Đăng xuất</a>
+                    </div>
+                } 
+            </div>
+        </nav>
+    </header>
+    <form id="form1" runat="server">  
+        <div>  
+            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" 
+                    AutoPostBack="True" DataTextField="CountryName" DataValueField="CountryID"></asp:DropDownList>  
+            <br />  
+            <br />  
+            <br />  
+            <asp:DropDownList ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" 
+                    AutoPostBack="True" DataTextField="StateName" DataValueField="StateID"></asp:DropDownList>  
+            <br />  
+            <br />  
+            <br />  
+            <asp:DropDownList ID="DropDownList3" runat="server" DataTextField="CityName" DataValueField="CityID"></asp:DropDownList>  
+        </div>  
+    </form>  
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - QuanLyHangHoa - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

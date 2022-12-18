@@ -1,0 +1,21 @@
+﻿@page
+@model QuanLyHangHoa.Pages.MH_DangKyModel
+
+@section Scripts
+{
+    <div>Đăng ký tài khoản.</div>
+}
+
+<form method="POST">
+    <label for="fname"> Tên đăng nhập:</label><br>
+    <input type="text" name="TenDangNhap" value=""><br>
+    <label for="pass"> Mật khẩu:</label><br>
+    <input type="password" name="MatKhau" value=""><br><br>
+    <label for="fullname">Họ và tên:</label><br>
+    <input type="text" name="HoTen" value=""><br>
+
+    <input type="submit" value="Đăng ký">
+</form>
+            
+@Model.Chuoi
+

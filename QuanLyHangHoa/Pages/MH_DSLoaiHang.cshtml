@@ -1,0 +1,21 @@
+﻿@page
+@model QuanLyHangHoa.Pages.MH_DSLoaiHangModel
+@using QuanLyHangHoa.Entities
+
+<table>
+    <tr>
+        <th>Các loại hàng</th>
+    </tr>    
+    @foreach (LoaiHang lh in Model.dsLoaiHang)
+    {
+        <tr>
+            <td>
+                @lh.loaiHang
+            </td>
+            <td>
+                <a href="MH_XoaHangHoa?ID=@lh.loaiHang"> Xóa </a>
+                <a href="MH_SuaHangHoa?ID=@lh.loaiHang"> Sửa </a>
+            </td>
+        </tr>
+    }
+</table>

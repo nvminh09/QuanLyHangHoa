@@ -1,0 +1,19 @@
+﻿@page
+@model QuanLyHangHoa.Pages.MH_DangNhapModel
+@using QuanLyHangHoa.Entities
+
+<form method="POST">
+    <label for="NhapTenDangNhap">Tên đăng nhập:</label><br>
+    <input type="text" name="TenDangNhap" value=""><br>
+    <label for="NhapMatKhau">Mật khẩu:</label><br>
+    <input type="password" name="MatKhau" value=""><br>
+    
+    <input type="submit" value="Đăng nhập">
+</form>
+            
+@Model.Chuoi
+
+@section Scripts
+{
+    <div>Đăng nhập.</div>
+}

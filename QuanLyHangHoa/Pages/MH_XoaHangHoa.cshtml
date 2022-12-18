@@ -1,0 +1,15 @@
+﻿@page
+@model QuanLyHangHoa.Pages.MH_XoaHangHoaModel
+@{ 
+
+}
+
+@if (Model.coHangHoa)
+{
+<form method="POST">
+    <div>Bạn có muốn xóa hàng hóa @Model.HangHoa.tenHang</div>
+    <input type="submit" value="Xóa">
+</form>
+}
+
+@Model.Chuoi
