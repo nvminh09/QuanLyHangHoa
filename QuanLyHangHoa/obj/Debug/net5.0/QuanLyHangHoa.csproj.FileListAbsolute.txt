@@ -45,3 +45,4 @@ C:\Users\Minh\VB2 CNTT\Ky thuat lap trinh\KTLT_VisualStudio\QuanLyHangHoa\QuanLy
 C:\Users\Minh\VB2 CNTT\Ky thuat lap trinh\KTLT_VisualStudio\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\net5.0\Razor\Pages\MH_DangNhap.cshtml.g.cs
 C:\Users\Minh\VB2 CNTT\Ky thuat lap trinh\KTLT_VisualStudio\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\net5.0\Razor\Pages\MH_DangKy.cshtml.g.cs
 C:\Users\Minh\VB2 CNTT\Ky thuat lap trinh\KTLT_VisualStudio\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\net5.0\Razor\Pages\MH_DSLoaiHang.cshtml.g.cs
+C:\Users\Minh\VB2 CNTT\Ky thuat lap trinh\KTLT_VisualStudio\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\net5.0\Razor\Pages\MH_XoaLoaiHang.cshtml.g.cs

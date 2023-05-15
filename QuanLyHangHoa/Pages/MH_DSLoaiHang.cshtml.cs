@@ -12,18 +12,16 @@ namespace QuanLyHangHoa.Pages
 {
     public class MH_DSLoaiHangModel : PageModel
     {
-        public List<LoaiHang> dsLoaiHang;
+        public List<HangHoa> dsLoaiHang;
         [BindProperty]
         public string tuKhoa { get; set; }
         public void OnGet()
         {
-            //dsLoaiHang = XuLyHangHoa.TimKiem(string.Empty);
-            dsLoaiHang = new List<LoaiHang>();
+            
         }
         public void OnPost()
         {
-            //dsLoaiHang = XuLyHangHoa.TimKiem(string.Empty);
-            //dsLoaiHang = new List<LoaiHang>();
+            
 
         }
     }

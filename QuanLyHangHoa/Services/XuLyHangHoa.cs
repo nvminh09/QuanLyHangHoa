@@ -52,6 +52,22 @@ namespace QuanLyHangHoa.Services
             }
             return null;
         }
+        public static HangHoa? DocLoaiHang(string ID)
+        {
+            if (string.IsNullOrEmpty(ID))
+            {
+                return null;
+            }
+            List<HangHoa> dsHH = LuuTruHangHoa.DocDanhSachHangHoa();
+            foreach (HangHoa hh in dsHH)
+            {
+                if (hh.maHang == ID)
+                {
+                    return hh;
+                }
+            }
+            return null;
+        }
         public static bool SuaHangHoa(string ID, string tenHang, string loaiHang, string congTySX, int namSX, int hanDung)
         {
             if (string.IsNullOrWhiteSpace(ID) ||

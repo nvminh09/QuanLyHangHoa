@@ -27,7 +27,6 @@ namespace QuanLyHangHoa.DAL
             writer.Close();
             return true;
         }
-
         public static List<HangHoa> DocDanhSachHangHoa()
         {
             StreamReader reader = new StreamReader("C:\\Users\\Minh\\VB2 CNTT\\Ky thuat lap trinh\\KTLT_VisualStudio\\HangHoa.json");
@@ -36,6 +35,15 @@ namespace QuanLyHangHoa.DAL
 
             List<HangHoa> danhSachHangHoa = JsonConvert.DeserializeObject<List<HangHoa>>(jsonString);
             return danhSachHangHoa;
+        }
+        public static List<LoaiHang> DocDanhSachLoaiHang()
+        {
+            StreamReader reader = new StreamReader("C:\\Users\\Minh\\VB2 CNTT\\Ky thuat lap trinh\\KTLT_VisualStudio\\HangHoa.json");
+            string jsonString = reader.ReadToEnd();
+            reader.Close();
+
+            List<LoaiHang> danhSachLoaiHang = JsonConvert.DeserializeObject<List<LoaiHang>>(jsonString);
+            return danhSachLoaiHang;
         }
         public static bool XoaHangHoa(string ID)
         {

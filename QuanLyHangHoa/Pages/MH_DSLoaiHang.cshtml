@@ -1,20 +1,24 @@
 ﻿@page
-@model QuanLyHangHoa.Pages.MH_DSLoaiHangModel
+@model QuanLyHangHoa.Pages.MH_DanhSachHangHoaModel
 @using QuanLyHangHoa.Entities
+
+<form method="POST">
+    <label for="fname">Nhap tu khoa:</label><br>
+    <input type="text" name="tuKhoaLoaiHang" value=" "><br>
+    <input type="submit" value="Tìm kiếm">
+</form>
 
 <table>
     <tr>
-        <th>Các loại hàng</th>
+        <th>Loại hàng</th>
     </tr>    
-    @foreach (LoaiHang lh in Model.dsLoaiHang)
+    @foreach (HangHoa hh in Model.dsHangHoa)
     {
         <tr>
+              <td>@hh.loaiHang</td>
             <td>
-                @lh.loaiHang
-            </td>
-            <td>
-                <a href="MH_XoaHangHoa?ID=@lh.loaiHang"> Xóa </a>
-                <a href="MH_SuaHangHoa?ID=@lh.loaiHang"> Sửa </a>
+                <a href="MH_XoaLoaiHang?ID=@hh.loaiHang"> Xóa loại hàng</a>
+                <a href=""> Sửa loại hàng</a>
             </td>
         </tr>
     }
